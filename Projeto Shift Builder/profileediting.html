@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile editing</title>
+    <script src="js/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+
+    <h1>Edit your profile</h1>
+    <h4>There's no point if you won't exist anymore.</h4>
+
+    <div id="left-content">
+        <img src="images/60513w_venus.jpg"/>
+    </div>
+    
+    <div id="right-content">
+        <p>Email</p><input type="text" id="email">
+        <p>Username</p><input type="text" id="username">
+        <p>Password</p><input type="password" id="password">
+        <p>Confirm password</p><input type="password" id="confirmpassword">
+        <p>First name</p><input type="text" id="firstname">
+        <p>Last name</p><input type="text" id="lastname">
+        <p>Age</p><input type="number" max="65" min="18" id="age">
+        <button onclick="update()">Update</button>
+    </div>
+    
+    <style>
+         
+         @media only screen and (min-width: 400px) {
+
+            body {
+            background-color: lightgreen;
+            }
+
+            h1{
+            color:red;
+            font-family: cursive;
+            text-align: center;
+            }
+
+            h4 {
+            color: red;
+            font-family: cursive;
+            text-align: center;
+            }
+
+            #left-content {
+            width: 50%;
+            float: left;
+            }
+            
+            #left-content img {
+            margin-left: 200px;
+            margin-top: 200px;
+            height: 500%;
+            width: 50%;
+            }
+
+            #right-content {
+            width: 50%;
+            float: right;
+            }
+
+            #right-content p {
+            color: red;
+            font-family: cursive;
+            margin-left: 20px;
+            }
+
+            #right-content input {
+            border: red 3px inset;
+            border-radius: 20px;
+            margin-left: 20px; 
+            }
+
+            #right-content button {
+            background-color: darkolivegreen;
+            color: red;
+            font-family: cursive;
+            border: red 3px inset;
+            border-radius: 20px;
+            margin-left: 20px;
+            }
+        }       
+    </style>
+
+    <script>
+        var characters=", ., :, ;, @, #, §, /, «, », <, >, º, ª, $, €, %, ^, &, *, (, ), ¢, £, ¥, _, +, -, =, ?, !, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, a, À, à, Á, á, Â, â, Ã, ã, B, b, C, c, Ç, ç, D, d, E, e, É, é, Ê, ê, F, f, G, g, H, h, I, i, Í, í, J, j, K, k, L, l, M, m, N, n, O, o, Ó, ó, Ô, ô, Õ, õ, P, p, Q, q, R, r, S, s, T, t, U, u, Ú, ú, V, v, W, w, X, x, Y, y, Z, z"
+        
+        function update(){
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var confirmpassword = document.getElementById("confirmpassword").value;
+        var email = document.getElementById("email").value;
+        var firstname = document.getElementById("firstname").value;
+        var lastname = document.getElementById("lastname").value;
+        var age = document.getElementById("age").value;
+        
+        if(username.length < 6 || password.length < 6){
+        alert("Please input at least 6 characters of username and password");
+        return false
+        }
+
+        if(characters.split(', ').some(char=>password.includes(char))==false){
+        alert("Add at least one special character");
+        return false
+        }
+
+        if(firstname.length < 2 || lastname.length < 2){
+        alert("Please input at least 2 characters of first name and last name");
+        return false
+        }
+
+        if(email=='' || age==''){
+        alert("Just fill all the inputs!")
+        return false;
+        }
+
+        if(password != confirmpassword) {
+        alert ("Password does not match, please try again...")
+        return false;
+        }
+
+        if(username.length >=6 || password.length >=6){
+        alert("Registration succefully");
+        }
+
+        var user = {
+        "email": email, "username": username, "password": password, "firstname": firstname, "lastname": lastname, "age": age
+        }
+
+        localStorage.setItem("user", JSON.stringify(user));
+
+        window.location = "index.html";
+        return true;
+    }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+Date selection
+
+<label for="start">Start date:</label>
+
+<input type="date" id="start" name="trip-start"
+       value="2018-07-22"
+       min="2018-01-01" max="2018-12-31">
+
+
+Start and end time selection
+
+<label for="appt">Choose a time for your meeting:</label>
+
+<input type="time" id="appt" name="appt"
+       min="00:00" max="00:00" required>
+
+<small>Office hours are 9am to 6pm</small>
+
+
+Dropdown list
+
+<label for="cars">Choose a car:</label>
+
+<select name="cars" id="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+
+<select id="city" name="city" class="form-select">
+    <option value="">Select City</option>
+    <option value="Alipur">Alipur</option>
+    <option value="Bawana">Bawana</option>
+    <option value="Central Delhi">Central Delhi</option>
+    <option value="Delhi">Delhi</option>
+    <option value="Deoli">Deoli</option>
+    <option value="East Delhi">East Delhi</option>
+    <option value="Karol Bagh">Karol Bagh</option>
+    <option value="Najafgarh">Najafgarh</option>
+    <option value="Nangloi Jat">Nangloi Jat</option>
+    <option value="Narela">Narela</option>
+    <option value="New Delhi">New Delhi</option>
+    <option value="North Delhi">North Delhi</option>
+    <option value="North East Delhi">North East Delhi</option>
+    <option value="North West Delhi">North West Delhi</option>
+    <option value="Pitampura">Pitampura</option>
+    <option value="Rohini">Rohini</option>
+    <option value="South Delhi">South Delhi</option>
+    <option value="South West Delhi">South West Delhi</option>
+    <option value="West Delhi">West Delhi</option>
+</select>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm a button</title>
+    <script src="js/jquery-3.7.0.min.js"></script>
+</head>
+
+<body>
+    <h1>I'm a button</h1>
+    <button id="click">I'm a click button</button>
+    <button id="double">I'm a double click button</button>
+</body>
+
+<script>
+    $(document).ready(function(){
+    $("#click").click(function(){
+    alert("clicked");
+    });
+    $("#double").dblclick(function(){
+    alert("double clicked");
+    });
+    });
+</script>
+
+</html>

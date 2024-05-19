@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficheiro 19</title>
+</head>
+<body>
+    <script>
+        let course= {
+        name: '',
+        description: '',
+        students:[],
+        addStudents(studentName){
+        this.students.push(studentName)
+        console.log(`${studentName} added to ${this.name} course`)
+        },
+        date: '12/12/2021'
+        };
+        let english = {
+        name:"english course",
+        description:"this is good course",
+        students:[]
+        }
+        let math = {
+        name:"math course",
+        description:"this is very good course",
+        students:[]
+        }
+        let addStudents = course.addStudents;
+        addStudents.call(english,"asaf")
+        addStudents.call(math,"Dani")
+        addStudents.call(english,"asaf")
+        addStudents.call(math,"Ron")
+
+        console.log(math);
+        console.log(english);
+        </script>
+</body>
+</html>

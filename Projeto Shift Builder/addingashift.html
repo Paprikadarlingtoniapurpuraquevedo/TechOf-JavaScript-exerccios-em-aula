@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding a shift</title>
+    <script src="js/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+
+
+    <h1>Add a shift</h1>
+    <h4>Every time you give us a piece of yourself.</h4>
+
+<div id="left-content">
+
+    <p>Add a date shift</p>
+    <input type="date" id="start" name="trip-start"
+       value="2018-07-22" min="2000-01-01" max="2100-12-31">
+
+    <p>Start time</p>
+    <input type="time" id="appt1" name="appt1"
+       min="00:00" max="00:00" required>
+
+
+    <p>End time</p>
+    <input type="time" id="appt2" name="appt2"
+       min="00:00" max="00:00" required>
+
+
+    <p>Hourly wage</p>
+    <input type="text" id="hourly-wage">
+
+    <p>Workplace</p>
+    <select name="cars" id="cars">
+        <option value="amazon">Amazon</option>
+        <option value="borneo">Borneo</option>
+        <option value="daintree">Daintree</option>
+        <option value="hawai">Hawai</option>
+    </select>
+
+
+    <p>Shift slug</p>
+    <input type="text" id="shift-slug">
+
+</div>
+
+<div id="right-content">
+
+    <p>Comments</p>
+    <form><textarea rows="10" cols="36" id="comments"></textarea></form>
+    
+    <button onclick="add()">Save</button>
+
+</div>
+
+    <style>
+
+    @media only screen and (min-width: 400px) {
+
+        body {
+        background-color: lightgreen;
+        }
+
+        h1{
+        color:red;
+        font-family: cursive;
+        text-align: center;
+        }
+
+        h4 {
+        color: red;
+        font-family: cursive;
+        text-align: center;
+        }
+
+        #left-content {
+            width: 50%;
+            float: left;
+        }
+
+        #left-content p {
+        color: red;
+        font-family: cursive;
+        margin-left: 400px;
+        }
+
+        #left-content input {
+        border: red 3px inset;
+        border-radius: 20px;
+        margin-left: 400px;
+        }
+
+        #left-content select {
+        border: red 3px inset;
+        border-radius: 20px;
+        margin-left: 400px;
+        }
+
+        #right-content {
+        width: 50%;
+        float: left;
+        }
+
+        #right-content p {
+        color: red;
+        font-family: cursive;
+        margin-left: 20px;
+        margin-top: 150px;
+        }
+
+        #right-content button {
+        background-color: darkolivegreen;
+        color: red;
+        font-family: cursive;
+        border: red 3px inset;
+        border-radius: 20px;
+        margin-left: 20px;
+        }
+
+        #right-content textarea {
+        border: red 3px inset;
+        border-radius: 20px;
+        margin-left: 20px;
+        }
+    }
+
+    </style>
+
+    <script>
+        function add(){
+        var date = document.getElementById("start").value;
+        var starttime = document.getElementById("appt1").value;
+        var endtime = document.getElementById("appt2").value;
+        var hourlywage = document.getElementById("hourly-wage").value;
+        var workplace = document.getElementById("cars").value;
+        var shiftslug = document.getElementById("shift-slug").value;
+        var comments = document.getElementById("comments").value;
+        
+        if(date=='' || starttime=='' || endtime=='' || hourlywage=='' || workplace=='' || shiftslug=='' || comments==''){
+        alert("Just fill all the inputs!")
+        return false;
+        }
+
+        var shift = {
+        "start": date, "appt1": starttime, "appt2": endtime, "hourly-wage": hourlywage, "cars": workplace, "shift-slug": shiftslug, "comments": comments
+        }
+
+        localStorage.setItem("shift", JSON.stringify(shift));
+
+        window.location = "index.html";
+        return true;
+    }
+    </script>
+    
+</body>
+</html>

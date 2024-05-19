@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficheiro 16</title>
+</head>
+<body>
+    <script>
+        const students = [
+            {id: 1, name: 'John', age: 18},
+            {id: 2, name: 'Jane', age: 20},
+            {id: 3, name: 'Mike', age: 19},
+            {id: 4, name: 'Sarah', age: 21},
+        ];
+
+        const grades = [
+        {id: 1, grade: 85},
+        {id: 2, grade: 92},
+        {id: 3, grade: 89},
+        {id: 5, grade: 95},
+        ];
+
+        function mergeArrays(students, grades) {
+
+        let mergedArr = []
+
+        for (let student of students) {
+            let studentId=student.id;
+
+            var studentGrade=null;
+            for(let grade of grades){
+                if(studentId===grade.id){
+                    studentGrade=grade;
+                }
+            }
+        }
+
+        let merged={...student, ...studentGrade}
+        mergedArr.push(merged)
+
+        return mergedArr;
+
+        }
+
+        console.log(mergeArrays(students, grades))
+    </script>
+</body>
+</html>

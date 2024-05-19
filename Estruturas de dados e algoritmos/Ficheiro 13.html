@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficheiro 13</title>
+</head>
+<body>
+    <script>
+        const user = {
+        id: 30,
+        displayName: 'Raz',
+        fullName: {
+        firstName: 'Mike',
+        lastName: 'Laris'
+        }
+        };
+        function userId({id}) {
+        return id;
+        }
+        function whois({displayName, fullName: {firstName: name}}) {
+        return `${displayName} is ${name}`;
+        }
+        console.log(userId(user));
+        console.log(whois(user));
+    </script>
+</body>
+</html>

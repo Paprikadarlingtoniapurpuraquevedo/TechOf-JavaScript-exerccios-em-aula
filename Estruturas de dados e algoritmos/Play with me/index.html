@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play with me</title>
+    <script src="js/jquery-3.7.0.min.js"></script>
+</head>
+
+<body>
+    <h1>Play with me</h1>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+</body>
+
+<script>
+    $(document).ready(function(){
+    $("#hide").click(function(){
+    $("h1").hide();
+    });
+    $("#show").click(function(){
+    $("h1").show();
+    });
+    $("#toggle").click(function(){
+    $("h1").toggle();
+    });
+    });
+</script>
+
+</html>

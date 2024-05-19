@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change the style</title>
+    <script src="js/jquery-3.7.0.min.js"></script>
+</head>
+
+<body>
+    <h1>Change the style</h1>
+    <button id="add">Add class</button>
+    <button id="remove">Remove class</button>
+    <button id="toggle">Toggle class</button>
+</body>
+
+<style>
+    h1 {
+        color: blue;
+        font-family: Arial;
+    }
+
+    .a1 {
+        color: black;
+        font-family: 'Times New Roman', Times, serif;
+    }
+</style>
+
+<script>
+    $(document).ready(function(){
+    $("#add").click(function(){
+    $("h1").addClass("a1");
+    });
+    $("#remove").click(function(){
+    $("h1").removeClass("a1");
+    });
+    $("#toggle").click(function(){
+    $("h1").toggleClass("a1");
+    });
+    });
+</script>
+
+</html>

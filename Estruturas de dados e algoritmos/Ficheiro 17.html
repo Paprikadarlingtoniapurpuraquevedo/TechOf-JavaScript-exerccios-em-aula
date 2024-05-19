@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficheiro 17</title>
+</head>
+<body>
+    <script>
+        const mySet1 = new Set()
+        mySet1.add(1)
+        mySet1.add(5)
+        mySet1.add(5)
+        mySet1.add('some text')
+        const o = {a: 1, b: 2}
+        mySet1.add(o)
+
+        mySet1.add({a: 1, b: 2})
+
+        mySet1.has(1)
+        mySet1.has(3)
+        mySet1.has(5)
+        mySet1.has(Math.sqrt(25))
+        mySet1.has('Some Text'.toLowerCase())
+        mySet1.has(o)
+
+        mySet1.size
+
+        mySet1.delete(5)
+        mySet1.has(5)
+
+        mySet1.size
+
+        console.log(mySet1)
+    </script>
+</body>
+</html>

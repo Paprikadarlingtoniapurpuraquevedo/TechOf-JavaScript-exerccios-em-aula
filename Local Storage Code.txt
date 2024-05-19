@@ -1,0 +1,15 @@
+localStorage.getItem("username");
+
+localStorage.setItem("username", username);
+
+localStorage.removeItem("username");
+
+return errorOnRegister("Please fill all fields again! Don't cry.");
+
+
+
+Users
+loggedUser
+Shifts
+Users=[{user}]
+loggedUser=User

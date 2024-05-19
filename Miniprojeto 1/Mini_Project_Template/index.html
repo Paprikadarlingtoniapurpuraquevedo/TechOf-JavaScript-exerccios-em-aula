@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <title>Guess the letter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="backGroundBody">
+    <h1>With which letter does it start</h1>
+    <h1 class="countQuestion">Question number 1</h1>
+
+    <div class="imgGuess">
+        <img id="imgToGuess" src="images/hat.png">
+    </div>
+    
+    <div class="input">
+        <input type="text" id="input">
+        <button class="btn play">Play</button>
+    </div>
+    
+    <div class="output">
+        <h2 class="message">correct number</h2>
+        <h2 class="score">score : 0</h2>
+        <h2 class="highscore">🍭 high score : 0</h2>
+    </div>
+    
+    <div class="playAgain hidden">
+        <button>Game over-lets play again</button>
+    </div>
+</body>
+
+<script>
+    var arr = ["images/hat.png", "images/boat.png", "images/short.png"];
+    var arrWord = ["hat", "boat" ,"shirt"];
+
+    var counter = 0;
+
+    var i = selectRandomImage();
+
+    var score = 0;
+    var highScore = 0;
+
+    document.body.classList.add('backGroundBody');
+
+    let btnPlayAgain = document.querySelector('.playAgain'); 
+
+    function selectRandomImage() {
+    document.querySelector("countQuestion").innertext="Questionnumber"+counter;
+
+    let index=getRandomInt(3);
+    let imgText=arr[index];
+
+    document.getElementById("imgToGuess").src=imgText;
+
+    return index;
+
+}
+
+    function play() {
+        counter++;
+
+        if(counter <=3) {
+            let word=arrWord[i];
+        }
+    
+    }
+
+    const showbtnPlayAgain = function () {
+	btnPlayAgain.classList.remove('hidden');
+};
+
+    const hiddenbtnPlayAgain = function () {
+	btnPlayAgain.classList.add('hidden');
+}
+
+    function gameOver();
+
+    function playAgain();
+</script>
+
+</html>

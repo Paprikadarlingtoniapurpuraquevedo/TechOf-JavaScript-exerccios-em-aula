@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <script src="js/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+    
+    <h1>Welcome!</h1>
+    <h4>You're crazy enough to be here.</h4>
+
+    <div id="left-content">
+        <img src="images/venusflytrapabouttoeatasnail.jpg"/>
+    </div>
+
+    <div id="right-content">
+            <input type="text" id="username" value="Username">
+            <input type="password" id="password" value="Password">
+            <button onclick="validate()">Login</button>
+            <button onclick="confirm()">Registrate</button>
+    </div>
+
+    <style>
+
+    @media only screen and (min-width: 400px) {
+
+        body {
+            background-color: lightgreen;
+        }
+
+        h1 {
+            color:red;
+            font-family: cursive;
+            text-align: center;
+        }
+
+        h4 {
+            color: red;
+            font-family: cursive;
+            text-align: center;
+        }
+
+        #left-content {
+            width: 50%;
+            float: left;
+        }
+
+        #left-content img {
+            margin-left: 400px;
+            margin-top: 100px;
+        }
+
+        #right-content {
+            width: 50%;
+            float: right;
+        }
+        
+        #right-content input {
+            border: red 3px inset;
+            border-radius: 20px;
+            margin-top: 250px;
+        }
+
+        #right-content button {
+            background-color: darkolivegreen;
+            color: red;
+            font-family: cursive;
+            border: red 3px inset;
+            border-radius: 20px;
+        }
+
+        #right-content button a {
+            color: red;
+            text-decoration: none;
+        }
+    }
+    </style>
+
+    <script>
+        
+        var attempt=3
+        
+        function validate(){
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        if( attempt == 0){
+        document.getElementById("username").disabled = true;
+        document.getElementById("password").disabled = true;
+        document.getElementById("submit").disabled = true;
+        return false;
+        }
+
+        if (username == 'Username' || password == 'Password' || username == '' || password == ''){
+        alert ("Just fill all the inputs!");
+        return false;
+        }
+
+        var user = localStorage.getItem("user");
+        user = JSON.parse(user);
+
+        if ( username == user.username && password == user.password){
+        alert ("Login successfully");
+        window.location = "index.html";
+        return false;
+        }
+
+        else if (username == 'Username' || password == 'Password' || username == '' || password == ''){
+        alert ("Just fill all the inputs!");
+        }
+        
+        else{
+        attempt --;
+        alert("Wrong login, you have left "+attempt+" attempt;");
+        }
+        }
+        
+
+        function confirm(){
+        
+        window.location = "registrationpage.html";
+        return false;
+        }
+
+    </script>
+
+</body>
+</html>

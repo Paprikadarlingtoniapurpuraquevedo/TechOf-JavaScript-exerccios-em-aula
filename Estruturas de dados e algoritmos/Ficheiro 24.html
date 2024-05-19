@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficheiro 24</title>
+</head>
+
+<body>
+    <script>
+            const students = [
+                {name: 'Alice', age: 20, grades: [80, 90, 95]},
+                {name: 'Bob', age: 19, grades: [70, 85, 92]},
+                {name: 'Charlie', age: 21, grades: [100, 80, 75]},
+                {name: 'David', age: 18, grades: [85, 90, 92]},
+                {name: 'Eve', age: 22, grades: [90, 88, 95]},
+            ];
+
+            const map = students.map(function(student){return student.name})
+
+            console.log(map);
+
+            const aboveAge = students.filter(function(student){student => student.age > 18})
+
+            console.log(aboveAge);
+
+    </script>
+</body>
+
+</html>

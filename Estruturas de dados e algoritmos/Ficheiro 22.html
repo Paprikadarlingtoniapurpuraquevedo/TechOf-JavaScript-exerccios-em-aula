@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficheiro 22</title>
+</head>
+
+<body>
+    <script>
+        var cart = [
+            {name: "Lamborghini", price: 30, quantity: 200},
+            {name: "Renault", price: 25, quantity: 1000},
+            {name: "Opel", price: 40, quantity: 600},
+            {name: "Nissan", price: 35, quantity: 800},
+        ];
+
+        var sumCart = 0;
+
+        cart.forEach(item=> {
+            var itemTotal =item.price + item.quantity;
+            sumCart += itemTotal;
+        })
+
+        console.log(sumCart);
+    </script>
+</body>
+
+</html>

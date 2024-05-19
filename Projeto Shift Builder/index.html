@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <script src="js/jquery-3.7.0.min.js"></script>
+</head>
+<body>
+
+    <topnav>
+        <ul id="nav">
+            <div id="left-content">
+                <li><a href="#search">My Shifts</a></li>
+                <li><a href="profileediting.html">Edit your profile</a></li>
+            </div>
+            <div id="right-content">
+                <li><a href="login.html">Log out</a></li>
+                <li><a id="hello"></a></li>
+            </div>
+        </ul>
+    </topnav>
+
+    <div class="header">
+        <img src="images/logo.jpg"/>
+        <h1>Carnivorous Food Inc.</h1>
+        <h4>Meet our plants.</h4>
+      </div>
+
+      <input type="text" id="search">
+      <select name="shifts" id="shifts">
+        <option value="shift">Shift</option>
+        <option value="datetodate">From date to date</option>
+    </select>
+
+    <button id="search">Search</button>
+    
+    <table border="1">
+        <thead>
+            <th>Date</th>
+            <th>Start time</th>
+            <th>End time</th>
+            <th>Hourly wage</th>
+            <th>Shift place</th>
+            <th>Total profit in euros per shift</th>
+        </thead>
+    </table>
+
+    <button><a href="addingashift.html">Add a shift</a></button>
+
+    <table border="0">
+        <thead>
+            <th>Month in which you earned the highest earnings:</th>
+        </thead>
+        <tbody>
+            <tr id="month"></tr>
+        </tbody>
+    </table>
+    
+      <div class="footer">
+        <div id="col-1"><li><a href="#">About us</a></li></div>
+        <div id="col-2"><li><a href="#">Our plants</a></li></div>
+        <div id="col-3"><li><a href="#">How you feed them</a></li></div>
+        <div id="col-4"><li><a href="#">Contact us</a></li></div>
+        <div id="col-5"><li>© All rights reserved</li></div>
+    </div>
+
+    <style>
+    
+    @media only screen and (min-width: 400px) {
+
+        button {
+        background-color: darkolivegreen;
+        color: red;
+        font-family: cursive;
+        border: red 3px inset;
+        border-radius: 20px;
+        margin-top: 40px;
+        }
+
+        button a {
+        color: red;
+        text-decoration: none;
+        }
+        
+        input {
+        border: red 3px inset;
+        border-radius: 20px;
+        margin-left: 20px;
+        margin-top: 40px;
+        }
+
+        select {
+        border: red 3px inset;
+        border-radius: 20px;
+        margin-top: 40px;
+        }
+
+        table {
+        margin-top: 40px;
+        width: 100%;
+        }
+
+        thead {
+        border: red 3px inset;
+        color: red;
+        font-family: cursive;
+        }
+        
+        #nav {
+        font-family: cursive;
+        list-style-type: none;
+        }
+        
+        #left-content {
+        width: 50%;
+        float: left;
+        }
+
+        #left-content li {
+        float: left;
+        margin-right: 20px;
+        }
+
+        #left-content li a {
+        text-decoration: none;
+        color: red;
+        }
+
+        #left-content li a:hover {
+        font-weight: bold;
+        }
+
+        #left-content li p {
+        text-decoration: none;
+        color: red;
+        }
+
+        #left-content li p:hover {
+        font-weight: bold;
+        }
+
+        #right-content {
+        width: 50%;
+        float: left;
+        }
+
+        #right-content li {
+        float: right;
+        margin-right: 20px;
+        }
+
+        #right-content li a {
+        text-decoration: none;
+        color: red;
+        }
+
+        #right-content li a:hover {
+        font-weight: bold;
+        }
+
+        #right-content li p {
+        text-decoration: none;
+        color: red;
+        }
+
+        #right-content li p:hover {
+        font-weight: bold;
+        }
+        
+        .header {
+        padding: 30px;
+        text-align: center;
+        background-color: white;
+        }
+        
+        body {
+        background-color: lightgreen;
+        }
+
+        h1{
+        color:red;
+        font-family: cursive;
+        text-align: center;
+        }
+
+        h4 {
+        color: red;
+        font-family: cursive;
+        text-align: center;
+        }
+
+        .footer {
+        position: fixed;
+        list-style-type: none;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: white;
+        }
+
+        #col-1 a {
+        margin-right: 20px;
+        float: left;
+        font-family: cursive;
+        color: red;
+        text-align: left;
+        text-decoration: none;
+        }
+
+        #col-1 a:hover {
+        margin-right: 20px;
+        float: left;
+        font-family: cursive;
+        font-weight: bold;
+        text-align: left;
+        text-decoration: none;
+        }
+
+        #col-2 a {
+        margin-right: 20px;
+        float: left;
+        font-family: cursive;
+        color: red;
+        text-align: left;
+        text-decoration: none;
+        }
+
+        #col-2 a:hover {
+        margin-right: 20px;
+        float: left;
+        font-family: cursive;
+        font-weight: bold;
+        text-align: left;
+        text-decoration: none;
+        }
+
+        #col-3 a {
+        margin-right: 20px;
+        float: left;
+        font-family: cursive;
+        color: red;
+        text-align: left;
+        text-decoration: none;
+        }
+
+        #col-3 a:hover {
+        margin-right: 20px;
+        float: left;
+        font-family: cursive;
+        font-weight: bold;
+        text-align: left;
+        text-decoration: none;
+        }
+
+        #col-4 a {
+        margin-right: 20px;
+        float: left;
+        font-family: cursive;
+        color: red;
+        text-align: left;
+        text-decoration: none;
+        }
+
+        #col-4 a:hover {
+        margin-right: 20px;
+        float: left;
+        font-family: cursive;
+        font-weight: bold;
+        text-align: left;
+        text-decoration: none;
+        }
+
+        #col-5 li {
+        margin-right: 20px;
+        float: right;
+        font-family: cursive;
+        color: red;
+        text-align: left;
+        text-decoration: none;
+        }
+    }
+    </style>
+
+    <script>
+        var user = localStorage.getItem("user");
+        user = JSON.parse(user);
+
+        document.getElementById("hello").innerText = "Hello -"+ user;
+    </script>
+
+</body>
+</html>

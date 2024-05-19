@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide P</title>
+    <script src="js/jquery-3.7.0.min.js"></script>
+</head>
+
+<body>
+    <h1>Hide P</h1>
+    <button onclick="click">Click me</button>
+    <p id="test">Take the trash</p>
+</body>
+
+<script>
+    $(document).ready(function(){
+        $("button").click(function(){
+            $("#test").hide();
+        });
+    });
+</script>
+
+</html>

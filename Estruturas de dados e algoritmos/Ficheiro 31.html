@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficheiro 31</title>
+</head>
+
+<body>
+    <h1>Hello await</h1>
+</body>
+
+<script>
+function resolveAfter2Seconds(x) {
+return new Promise(resolve => {
+setTimeout(() => {
+resolve(x);
+}, 2000);
+});
+}
+async function f1() {
+var x = await resolveAfter2Seconds(10);
+console.log(x); // 10
+}
+f1();
+</script>
+            
+</script>
+</body>
+
+</html>
